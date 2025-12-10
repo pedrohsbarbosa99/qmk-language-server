@@ -312,6 +312,21 @@ impl LanguageServer for Backend {
         else if let Some(custom) = doc_entry.custom_keycodes.iter().find(|c| c.name == word) {
              hover_text = format!("### {} (Custom Keycode)\n\nDefined in this file.", custom.name);
         }
+        // Check Layouts from info.json
+        else if let Ok(file_path) = uri.to_file_path() {
+            if let Some(info) = find_and_load_info_json(&file_path) {
+                if let Some(layout) = info.layouts.get(word) {
+                    let kb_name = info.keyboard_name.as_deref().unwrap_or("Unknown Keyboard");
+                    let maintainer = info.maintainer.as_deref().unwrap_or("Unknown");
+                    let key_count = layout.layout.len();
+                    
+                    hover_text = format!(
+                        "### {}\n\n**Keyboard:** {}\n\n**Keys:** {}\n\n**Maintainer:** {}\n\n---\n\n#### Layout Info\nThis layout is defined in `info.json` or `keyboard.json`.",
+                        word, kb_name, key_count, maintainer
+                    );
+                }
+            }
+        }
         
         if hover_text.is_empty() {
             return Ok(None);

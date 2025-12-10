@@ -4,7 +4,11 @@ use std::fs;
 use std::path::Path;
 
 #[derive(Debug, Deserialize, Clone)]
+
 pub struct KeyboardInfo {
+    pub keyboard_name: Option<String>,
+    pub manufacturer: Option<String>,
+    pub maintainer: Option<String>,
     pub layouts: HashMap<String, LayoutMap>,
 }
 
