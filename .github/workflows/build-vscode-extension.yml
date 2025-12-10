@@ -1,0 +1,48 @@
+name: Build VSCode Extension
+
+on:
+  workflow_run:
+    workflows: ["Build Rust LSP Server"]
+    types:
+      - completed
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      # --- Download LSP Artifact ---
+      - name: Download LSP server artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: lsp-server
+          path: lsp-build/
+
+      - name: Copy server binary into extension
+        run: |
+          mkdir -p extensions/vscode/client/server/bin
+          cp lsp-build/qmk-lsp extensions/vscode/client/server/bin/qmk-lsp
+          chmod +x extensions/vscode/client/server/bin/qmk-lsp
+
+      # --- Build VSCode extension ---
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install deps
+        working-directory: extensions/vscode
+        run: npm install
+
+      - name: Package VSIX
+        working-directory: extensions/vscode
+        run: npx vsce package
+
+      - name: Upload .vsix result
+        uses: actions/upload-artifact@v4
+        with:
+          name: vscode-extension
+          path: extensions/vscode/*.vsix
