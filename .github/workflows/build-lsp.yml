@@ -1,0 +1,27 @@
+name: Build Rust LSP Server
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Build LSP server
+        run: cargo build --release
+
+      - name: Upload LSP binary as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: lsp-server
+          path: target/release/qmk-lsp
