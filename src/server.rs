@@ -123,6 +123,7 @@ impl LanguageServer for Backend {
                     ..Default::default()
                 }),
                 hover_provider: Some(HoverProviderCapability::Simple(true)),
+                definition_provider: Some(OneOf::Left(true)),
                 ..Default::default()
             },
             ..Default::default()
@@ -139,6 +140,88 @@ impl LanguageServer for Backend {
     async fn shutdown(&self) -> Result<()> {
         eprintln!("Shutdown request");
         Ok(())
+    }
+
+    async fn goto_definition(
+        &self,
+        params: GotoDefinitionParams,
+    ) -> Result<Option<GotoDefinitionResponse>> {
+        let uri = params.text_document_position_params.text_document.uri;
+        let position = params.text_document_position_params.position;
+        
+        let doc_entry = match self.documents.documents.get(&uri) {
+            Some(d) => d,
+            None => return Ok(None),
+        };
+        let content = &doc_entry.content;
+
+        // Get word under cursor (Quick reuse of hover logic logic... should abstract this maybe)
+        let lines: Vec<&str> = content.lines().collect();
+        if position.line as usize >= lines.len() {
+             return Ok(None);
+        }
+        let line = lines[position.line as usize];
+        let mut byte_offset = 0;
+        let mut utf16_count = 0;
+        for (i, c) in line.char_indices() {
+             if utf16_count == position.character as usize {
+                 byte_offset = i;
+                 break;
+             }
+             if utf16_count > position.character as usize {
+                 byte_offset = i;
+                 break;
+             }
+             utf16_count += c.len_utf16();
+        }
+        if utf16_count == position.character as usize && byte_offset == 0 && !line.is_empty() {
+             byte_offset = line.len(); 
+        }
+        
+        // Scan word
+        let mut start_byte = byte_offset;
+        let mut end_byte = byte_offset;
+        while start_byte > 0 {
+            let (prev_char_idx, prev_char) = line[..start_byte].char_indices().next_back().unwrap();
+             if !prev_char.is_alphanumeric() && prev_char != '_' {
+                break;
+            }
+            start_byte = prev_char_idx;
+        }
+        while end_byte < line.len() {
+             let (_, cur_char) = line[end_byte..].char_indices().next().unwrap();
+             if !cur_char.is_alphanumeric() && cur_char != '_' {
+                 break;
+             }
+             end_byte += cur_char.len_utf8();
+        }
+        if start_byte >= end_byte {
+            return Ok(None);
+        }
+        let word = &line[start_byte..end_byte];
+
+        // Layouts in parsing info.json
+        if let Ok(file_path) = uri.to_file_path() {
+            use crate::parser::info_json::find_info_json_path;
+            if let Some(info_path) = find_info_json_path(&file_path) {
+                // Read the file to find the line number
+               if let Ok(json_content) = std::fs::read_to_string(&info_path) {
+                   // Simple line scan for the key "LAYOUT_XXX"
+                   // This is heuristic but usually works for pretty printed JSON
+                   for (i, line) in json_content.lines().enumerate() {
+                       if line.contains(&format!("\"{}\"", word)) {
+                           let target_uri = Url::from_file_path(&info_path).unwrap();
+                           return Ok(Some(GotoDefinitionResponse::Scalar(Location {
+                               uri: target_uri,
+                               range: Range::new(Position::new(i as u32, 0), Position::new(i as u32, 0)),
+                           })));
+                       }
+                   }
+               }
+            }
+        }
+
+        Ok(None)
     }
 
 

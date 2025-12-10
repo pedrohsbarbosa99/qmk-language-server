@@ -24,7 +24,7 @@ pub struct LayoutKey {
     // we just need the count, but parsing struct needs to match
 }
 
-pub fn find_and_load_info_json(start_path: &Path) -> Option<KeyboardInfo> {
+pub fn find_info_json_path(start_path: &Path) -> Option<std::path::PathBuf> {
     let mut current = start_path.to_path_buf();
     if current.is_file() {
         current.pop();
@@ -33,20 +33,25 @@ pub fn find_and_load_info_json(start_path: &Path) -> Option<KeyboardInfo> {
     loop {
         let info_path = current.join("info.json");
         if info_path.exists() {
-             if let Ok(info) = load_info_json(&info_path) {
-                 return Some(info);
-             }
+            return Some(info_path);
         }
         
         let keyboard_json = current.join("keyboard.json");
         if keyboard_json.exists() {
-             if let Ok(info) = load_info_json(&keyboard_json) {
-                 return Some(info);
-             }
+            return Some(keyboard_json);
         }
 
         if !current.pop() {
             break;
+        }
+    }
+    None
+}
+
+pub fn find_and_load_info_json(start_path: &Path) -> Option<KeyboardInfo> {
+    if let Some(path) = find_info_json_path(start_path) {
+        if let Ok(info) = load_info_json(&path) {
+            return Some(info);
         }
     }
     None
