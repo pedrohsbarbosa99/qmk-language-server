@@ -3,6 +3,7 @@ use crate::parser::macros::{load_macros, MacroMap};
 use crate::document::{DocumentStore, DocumentData};
 use crate::parser::layers::parse_layers;
 use crate::parser::custom::parse_custom_keycodes;
+use regex::Regex;
 use tower_lsp::jsonrpc::Result;
 use tower_lsp::lsp_types::*;
 use tower_lsp::{Client, LanguageServer};
@@ -22,6 +23,60 @@ impl Backend {
             macros: load_macros(),
             documents: DocumentStore::new(),
         }
+    }
+
+    async fn validate(&self, uri: Url) {
+        let doc_entry = match self.documents.documents.get(&uri) {
+            Some(d) => d,
+            None => return,
+        };
+        let content = &doc_entry.content;
+        let custom_keycodes = &doc_entry.custom_keycodes;
+
+        let mut diagnostics = Vec::new();
+        let re = Regex::new(r"\bKC_[A-Z0-9_]+\b").unwrap();
+
+        let get_position = |byte_idx: usize| -> Position {
+             let mut line = 0;
+             let mut character = 0;
+             
+             for (idx, c) in content.char_indices() {
+                 if idx == byte_idx {
+                     break;
+                 }
+                 if c == '\n' {
+                     line += 1;
+                     character = 0;
+                 } else {
+                     character += c.len_utf16() as u32;
+                 }
+             }
+             Position::new(line, character)
+        };
+
+        for cap in re.captures_iter(content) {
+            if let Some(m) = cap.get(0) {
+                let text = m.as_str();
+                let start_pos = get_position(m.start());
+                let end_pos = get_position(m.end());
+
+                let is_valid = self.keycodes.contains_key(text) || 
+                               custom_keycodes.iter().any(|ck| ck.name == text);
+
+                if !is_valid {
+                    diagnostics.push(Diagnostic {
+                        range: Range::new(start_pos, end_pos),
+                        severity: Some(DiagnosticSeverity::ERROR),
+                        code: Some(NumberOrString::String("unknown_keycode".to_string())),
+                        source: Some("qmk-lsp".to_string()),
+                        message: format!("Unknown QMK keycode: '{}'", text),
+                        ..Default::default()
+                    });
+                }
+            }
+        }
+
+        self.client.publish_diagnostics(uri, diagnostics, None).await;
     }
 }
 
@@ -57,17 +112,21 @@ impl LanguageServer for Backend {
         Ok(())
     }
 
+
     async fn did_open(&self, params: DidOpenTextDocumentParams) {
         eprintln!("Opened document: {}", params.text_document.uri);
         let content = params.text_document.text;
         let layers = parse_layers(&content);
         let custom_keycodes = parse_custom_keycodes(&content);
         
-        self.documents.documents.insert(params.text_document.uri, DocumentData {
+        let uri = params.text_document.uri.clone();
+        self.documents.documents.insert(uri.clone(), DocumentData {
             content,
             layers,
             custom_keycodes,
         });
+
+        self.validate(uri).await;
     }
 
     async fn did_change(&self, params: DidChangeTextDocumentParams) {
@@ -76,11 +135,14 @@ impl LanguageServer for Backend {
             let layers = parse_layers(&content);
             let custom_keycodes = parse_custom_keycodes(&content);
 
-            self.documents.documents.insert(params.text_document.uri, DocumentData {
+            let uri = params.text_document.uri.clone();
+            self.documents.documents.insert(uri.clone(), DocumentData {
                 content,
                 layers,
                 custom_keycodes,
             });
+
+            self.validate(uri).await;
         }
     }
 
@@ -187,7 +249,7 @@ impl LanguageServer for Backend {
 
         // Scan forwards
         while end_byte < line.len() {
-             let (cur_char_idx, cur_char) = line[end_byte..].char_indices().next().unwrap();
+             let (_, cur_char) = line[end_byte..].char_indices().next().unwrap();
              if !cur_char.is_alphanumeric() && cur_char != '_' {
                  break;
              }

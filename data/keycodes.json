@@ -922,5 +922,251 @@
     "description": "Transparent",
     "doc": "Alias for KC_TRANSPARENT",
     "category": "special"
+  },
+  {
+    "name": "KC_TILDE",
+    "description": "~",
+    "doc": "Tilde",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_TILD",
+    "description": "~",
+    "doc": "Alias for KC_TILDE",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_EXCLAIM",
+    "description": "!",
+    "doc": "Exclamation Mark",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_EXLM",
+    "description": "!",
+    "doc": "Alias for KC_EXCLAIM",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_AT",
+    "description": "@",
+    "doc": "At Sign",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_HASH",
+    "description": "#",
+    "doc": "Hash Sign",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_DOLLAR",
+    "description": "$",
+    "doc": "Dollar Sign",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_DLR",
+    "description": "$",
+    "doc": "Alias for KC_DOLLAR",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_PERCENT",
+    "description": "%",
+    "doc": "Percent Sign",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_PERC",
+    "description": "%",
+    "doc": "Alias for KC_PERCENT",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_CIRCUMFLEX",
+    "description": "^",
+    "doc": "Circumflex",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_CIRC",
+    "description": "^",
+    "doc": "Alias for KC_CIRCUMFLEX",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_AMPERSAND",
+    "description": "&",
+    "doc": "Ampersand",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_AMPR",
+    "description": "&",
+    "doc": "Alias for KC_AMPERSAND",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_ASTERISK",
+    "description": "*",
+    "doc": "Asterisk",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_ASTR",
+    "description": "*",
+    "doc": "Alias for KC_ASTERISK",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_LEFT_PAREN",
+    "description": "(",
+    "doc": "Left Parenthesis",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_LPRN",
+    "description": "(",
+    "doc": "Alias for KC_LEFT_PAREN",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_RIGHT_PAREN",
+    "description": ")",
+    "doc": "Right Parenthesis",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_RPRN",
+    "description": ")",
+    "doc": "Alias for KC_RIGHT_PAREN",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_UNDERSCORE",
+    "description": "_",
+    "doc": "Underscore",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_UNDS",
+    "description": "_",
+    "doc": "Alias for KC_UNDERSCORE",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_PLUS",
+    "description": "+",
+    "doc": "Plus Sign",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_LEFT_CURLY_BRACE",
+    "description": "{",
+    "doc": "Left Curly Brace",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_LCBR",
+    "description": "{",
+    "doc": "Alias for KC_LEFT_CURLY_BRACE",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_RIGHT_CURLY_BRACE",
+    "description": "}",
+    "doc": "Right Curly Brace",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_RCBR",
+    "description": "}",
+    "doc": "Alias for KC_RIGHT_CURLY_BRACE",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_PIPE",
+    "description": "|",
+    "doc": "Pipe",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_COLON",
+    "description": ":",
+    "doc": "Colon",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_COLN",
+    "description": ":",
+    "doc": "Alias for KC_COLON",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_DOUBLE_QUOTE",
+    "description": "\"",
+    "doc": "Double Quote",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_DQUO",
+    "description": "\"",
+    "doc": "Alias for KC_DOUBLE_QUOTE",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_DQT",
+    "description": "\"",
+    "doc": "Alias for KC_DOUBLE_QUOTE",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_LEFT_ANGLE_BRACKET",
+    "description": "<",
+    "doc": "Left Angle Bracket",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_LABK",
+    "description": "<",
+    "doc": "Alias for KC_LEFT_ANGLE_BRACKET",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_LT",
+    "description": "<",
+    "doc": "Alias for KC_LEFT_ANGLE_BRACKET",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_RIGHT_ANGLE_BRACKET",
+    "description": ">",
+    "doc": "Right Angle Bracket",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_RABK",
+    "description": ">",
+    "doc": "Alias for KC_RIGHT_ANGLE_BRACKET",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_GT",
+    "description": ">",
+    "doc": "Alias for KC_RIGHT_ANGLE_BRACKET",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_QUESTION",
+    "description": "?",
+    "doc": "Question Mark",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_QUES",
+    "description": "?",
+    "doc": "Alias for KC_QUESTION",
+    "category": "punctuation"
   }
 ]

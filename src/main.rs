@@ -1,9 +1,5 @@
 use tower_lsp::{LspService, Server};
-use crate::server::Backend;
-
-mod document;
-mod parser;
-mod server;
+use qmk_lsp::server::Backend;
 
 #[tokio::main]
 async fn main() {

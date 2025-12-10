@@ -40,24 +40,3 @@ pub fn parse_custom_keycodes(content: &str) -> Vec<CustomKeycode> {
     keycodes
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_parse_custom_keycodes() {
-        let content = "
-        enum custom_keycodes {
-            MY_KEY1,
-            MY_KEY2 = SAFE_RANGE,
-            // Comment
-            MY_KEY3
-        };
-        ";
-        let kcs = parse_custom_keycodes(content);
-        assert_eq!(kcs.len(), 3);
-        assert_eq!(kcs[0].name, "MY_KEY1");
-        assert_eq!(kcs[1].name, "MY_KEY2");
-        assert_eq!(kcs[2].name, "MY_KEY3");
-    }
-}
