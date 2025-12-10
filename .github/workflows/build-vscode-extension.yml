@@ -14,12 +14,13 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      # --- Download LSP Artifact ---
-      - name: Download LSP server artifact
-        uses: actions/download-artifact@v4
+      - name: Download LSP server artifact from last run
+        uses: dawidd6/action-download-artifact@v3
         with:
+          workflow: build-lsp.yml        # nome do arquivo do workflow A
           name: lsp-server
           path: lsp-build/
+          branch: main                   # garante que é do branch certo
 
       - name: Copy server binary into extension
         run: |
@@ -27,7 +28,6 @@ jobs:
           cp lsp-build/qmk-lsp extensions/vscode/client/server/bin/qmk-lsp
           chmod +x extensions/vscode/client/server/bin/qmk-lsp
 
-      # --- Build VSCode extension ---
       - name: Install Node
         uses: actions/setup-node@v4
         with:
