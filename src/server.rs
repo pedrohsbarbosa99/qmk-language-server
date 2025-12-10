@@ -3,6 +3,7 @@ use crate::parser::macros::{load_macros, MacroMap};
 use crate::document::{DocumentStore, DocumentData};
 use crate::parser::layers::parse_layers;
 use crate::parser::custom::parse_custom_keycodes;
+use crate::parser::info_json::find_and_load_info_json;
 use regex::Regex;
 use tower_lsp::jsonrpc::Result;
 use tower_lsp::lsp_types::*;
@@ -25,6 +26,8 @@ impl Backend {
         }
     }
 
+
+
     async fn validate(&self, uri: Url) {
         let doc_entry = match self.documents.documents.get(&uri) {
             Some(d) => d,
@@ -32,6 +35,7 @@ impl Backend {
         };
         let content = &doc_entry.content;
         let custom_keycodes = &doc_entry.custom_keycodes;
+        let layers = &doc_entry.layers;
 
         let mut diagnostics = Vec::new();
         let re = Regex::new(r"\bKC_[A-Z0-9_]+\b").unwrap();
@@ -54,6 +58,7 @@ impl Backend {
              Position::new(line, character)
         };
 
+        // 1. Keycode validation
         for cap in re.captures_iter(content) {
             if let Some(m) = cap.get(0) {
                 let text = m.as_str();
@@ -72,6 +77,30 @@ impl Backend {
                         message: format!("Unknown QMK keycode: '{}'", text),
                         ..Default::default()
                     });
+                }
+            }
+        }
+        
+        // 2. Layer size validation against info.json
+        if let Ok(file_path) = uri.to_file_path() {
+            if let Some(info) = find_and_load_info_json(&file_path) {
+                for layer in layers {
+                    if let Some(layout_map) = info.layouts.get(&layer.macro_name) {
+                        let expected_count = layout_map.layout.len();
+                        if layer.key_count != expected_count {
+                            let start_pos = get_position(layer.span.start);
+                            let end_pos = get_position(layer.span.end);
+                            
+                            diagnostics.push(Diagnostic {
+                                range: Range::new(start_pos, end_pos),
+                                severity: Some(DiagnosticSeverity::ERROR), // Or WARNING? User can decide, defaulting to ERROR as it breaks keymap.
+                                code: Some(NumberOrString::String("layer_mismatch".to_string())),
+                                source: Some("qmk-lsp".to_string()),
+                                message: format!("Layout mismatch: '{}' expects {} keys, found {}.", layer.macro_name, expected_count, layer.key_count),
+                                ..Default::default()
+                            });
+                        }
+                    }
                 }
             }
         }
