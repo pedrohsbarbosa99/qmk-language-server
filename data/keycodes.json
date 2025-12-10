@@ -1,0 +1,926 @@
+[
+  {
+    "name": "KC_A",
+    "description": "a and A",
+    "doc": "Letter A",
+    "category": "alpha"
+  },
+  {
+    "name": "KC_B",
+    "description": "b and B",
+    "doc": "Letter B",
+    "category": "alpha"
+  },
+  {
+    "name": "KC_C",
+    "description": "c and C",
+    "doc": "Letter C",
+    "category": "alpha"
+  },
+  {
+    "name": "KC_D",
+    "description": "d and D",
+    "doc": "Letter D",
+    "category": "alpha"
+  },
+  {
+    "name": "KC_E",
+    "description": "e and E",
+    "doc": "Letter E",
+    "category": "alpha"
+  },
+  {
+    "name": "KC_F",
+    "description": "f and F",
+    "doc": "Letter F",
+    "category": "alpha"
+  },
+  {
+    "name": "KC_G",
+    "description": "g and G",
+    "doc": "Letter G",
+    "category": "alpha"
+  },
+  {
+    "name": "KC_H",
+    "description": "h and H",
+    "doc": "Letter H",
+    "category": "alpha"
+  },
+  {
+    "name": "KC_I",
+    "description": "i and I",
+    "doc": "Letter I",
+    "category": "alpha"
+  },
+  {
+    "name": "KC_J",
+    "description": "j and J",
+    "doc": "Letter J",
+    "category": "alpha"
+  },
+  {
+    "name": "KC_K",
+    "description": "k and K",
+    "doc": "Letter K",
+    "category": "alpha"
+  },
+  {
+    "name": "KC_L",
+    "description": "l and L",
+    "doc": "Letter L",
+    "category": "alpha"
+  },
+  {
+    "name": "KC_M",
+    "description": "m and M",
+    "doc": "Letter M",
+    "category": "alpha"
+  },
+  {
+    "name": "KC_N",
+    "description": "n and N",
+    "doc": "Letter N",
+    "category": "alpha"
+  },
+  {
+    "name": "KC_O",
+    "description": "o and O",
+    "doc": "Letter O",
+    "category": "alpha"
+  },
+  {
+    "name": "KC_P",
+    "description": "p and P",
+    "doc": "Letter P",
+    "category": "alpha"
+  },
+  {
+    "name": "KC_Q",
+    "description": "q and Q",
+    "doc": "Letter Q",
+    "category": "alpha"
+  },
+  {
+    "name": "KC_R",
+    "description": "r and R",
+    "doc": "Letter R",
+    "category": "alpha"
+  },
+  {
+    "name": "KC_S",
+    "description": "s and S",
+    "doc": "Letter S",
+    "category": "alpha"
+  },
+  {
+    "name": "KC_T",
+    "description": "t and T",
+    "doc": "Letter T",
+    "category": "alpha"
+  },
+  {
+    "name": "KC_U",
+    "description": "u and U",
+    "doc": "Letter U",
+    "category": "alpha"
+  },
+  {
+    "name": "KC_V",
+    "description": "v and V",
+    "doc": "Letter V",
+    "category": "alpha"
+  },
+  {
+    "name": "KC_W",
+    "description": "w and W",
+    "doc": "Letter W",
+    "category": "alpha"
+  },
+  {
+    "name": "KC_X",
+    "description": "x and X",
+    "doc": "Letter X",
+    "category": "alpha"
+  },
+  {
+    "name": "KC_Y",
+    "description": "y and Y",
+    "doc": "Letter Y",
+    "category": "alpha"
+  },
+  {
+    "name": "KC_Z",
+    "description": "z and Z",
+    "doc": "Letter Z",
+    "category": "alpha"
+  },
+  {
+    "name": "KC_1",
+    "description": "1 and !",
+    "doc": "Number 1",
+    "category": "alpha"
+  },
+  {
+    "name": "KC_2",
+    "description": "2 and @",
+    "doc": "Number 2",
+    "category": "alpha"
+  },
+  {
+    "name": "KC_3",
+    "description": "3 and #",
+    "doc": "Number 3",
+    "category": "alpha"
+  },
+  {
+    "name": "KC_4",
+    "description": "4 and $",
+    "doc": "Number 4",
+    "category": "alpha"
+  },
+  {
+    "name": "KC_5",
+    "description": "5 and %",
+    "doc": "Number 5",
+    "category": "alpha"
+  },
+  {
+    "name": "KC_6",
+    "description": "6 and ^",
+    "doc": "Number 6",
+    "category": "alpha"
+  },
+  {
+    "name": "KC_7",
+    "description": "7 and &",
+    "doc": "Number 7",
+    "category": "alpha"
+  },
+  {
+    "name": "KC_8",
+    "description": "8 and *",
+    "doc": "Number 8",
+    "category": "alpha"
+  },
+  {
+    "name": "KC_9",
+    "description": "9 and (",
+    "doc": "Number 9",
+    "category": "alpha"
+  },
+  {
+    "name": "KC_0",
+    "description": "0 and )",
+    "doc": "Number 0",
+    "category": "alpha"
+  },
+  {
+    "name": "KC_F1",
+    "description": "F1",
+    "doc": "Function Key 1",
+    "category": "function"
+  },
+  {
+    "name": "KC_F2",
+    "description": "F2",
+    "doc": "Function Key 2",
+    "category": "function"
+  },
+  {
+    "name": "KC_F3",
+    "description": "F3",
+    "doc": "Function Key 3",
+    "category": "function"
+  },
+  {
+    "name": "KC_F4",
+    "description": "F4",
+    "doc": "Function Key 4",
+    "category": "function"
+  },
+  {
+    "name": "KC_F5",
+    "description": "F5",
+    "doc": "Function Key 5",
+    "category": "function"
+  },
+  {
+    "name": "KC_F6",
+    "description": "F6",
+    "doc": "Function Key 6",
+    "category": "function"
+  },
+  {
+    "name": "KC_F7",
+    "description": "F7",
+    "doc": "Function Key 7",
+    "category": "function"
+  },
+  {
+    "name": "KC_F8",
+    "description": "F8",
+    "doc": "Function Key 8",
+    "category": "function"
+  },
+  {
+    "name": "KC_F9",
+    "description": "F9",
+    "doc": "Function Key 9",
+    "category": "function"
+  },
+  {
+    "name": "KC_F10",
+    "description": "F10",
+    "doc": "Function Key 10",
+    "category": "function"
+  },
+  {
+    "name": "KC_F11",
+    "description": "F11",
+    "doc": "Function Key 11",
+    "category": "function"
+  },
+  {
+    "name": "KC_F12",
+    "description": "F12",
+    "doc": "Function Key 12",
+    "category": "function"
+  },
+  {
+    "name": "KC_F13",
+    "description": "F13",
+    "doc": "Function Key 13",
+    "category": "function"
+  },
+  {
+    "name": "KC_F14",
+    "description": "F14",
+    "doc": "Function Key 14",
+    "category": "function"
+  },
+  {
+    "name": "KC_F15",
+    "description": "F15",
+    "doc": "Function Key 15",
+    "category": "function"
+  },
+  {
+    "name": "KC_F16",
+    "description": "F16",
+    "doc": "Function Key 16",
+    "category": "function"
+  },
+  {
+    "name": "KC_F17",
+    "description": "F17",
+    "doc": "Function Key 17",
+    "category": "function"
+  },
+  {
+    "name": "KC_F18",
+    "description": "F18",
+    "doc": "Function Key 18",
+    "category": "function"
+  },
+  {
+    "name": "KC_F19",
+    "description": "F19",
+    "doc": "Function Key 19",
+    "category": "function"
+  },
+  {
+    "name": "KC_F20",
+    "description": "F20",
+    "doc": "Function Key 20",
+    "category": "function"
+  },
+  {
+    "name": "KC_F21",
+    "description": "F21",
+    "doc": "Function Key 21",
+    "category": "function"
+  },
+  {
+    "name": "KC_F22",
+    "description": "F22",
+    "doc": "Function Key 22",
+    "category": "function"
+  },
+  {
+    "name": "KC_F23",
+    "description": "F23",
+    "doc": "Function Key 23",
+    "category": "function"
+  },
+  {
+    "name": "KC_F24",
+    "description": "F24",
+    "doc": "Function Key 24",
+    "category": "function"
+  },
+  {
+    "name": "KC_ENTER",
+    "description": "Return (Enter)",
+    "doc": "Enter Key",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_ENT",
+    "description": "Return (Enter)",
+    "doc": "Alias for KC_ENTER",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_ESCAPE",
+    "description": "Escape",
+    "doc": "Escape Key",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_ESC",
+    "description": "Escape",
+    "doc": "Alias for KC_ESCAPE",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_BACKSPACE",
+    "description": "Delete (Backspace)",
+    "doc": "Backspace Key",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_BSPC",
+    "description": "Delete (Backspace)",
+    "doc": "Alias for KC_BACKSPACE",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_TAB",
+    "description": "Tab",
+    "doc": "Tab Key",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_SPACE",
+    "description": "Spacebar",
+    "doc": "Space Key",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_SPC",
+    "description": "Spacebar",
+    "doc": "Alias for KC_SPACE",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_MINUS",
+    "description": "- and _",
+    "doc": "Minus Key",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_MINS",
+    "description": "- and _",
+    "doc": "Alias for KC_MINUS",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_EQUAL",
+    "description": "= and +",
+    "doc": "Equal Key",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_EQL",
+    "description": "= and +",
+    "doc": "Alias for KC_EQUAL",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_LEFT_BRACKET",
+    "description": "[ and {",
+    "doc": "Left Bracket",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_LBRC",
+    "description": "[ and {",
+    "doc": "Alias for KC_LEFT_BRACKET",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_RIGHT_BRACKET",
+    "description": "] and }",
+    "doc": "Right Bracket",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_RBRC",
+    "description": "] and }",
+    "doc": "Alias for KC_RIGHT_BRACKET",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_BACKSLASH",
+    "description": "\\ and |",
+    "doc": "Backslash",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_BSLS",
+    "description": "\\ and |",
+    "doc": "Alias for KC_BACKSLASH",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_NONUS_HASH",
+    "description": "Non-US # and ~",
+    "doc": "Non-US Hash",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_NUHS",
+    "description": "Non-US # and ~",
+    "doc": "Alias for KC_NONUS_HASH",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_SEMICOLON",
+    "description": "; and :",
+    "doc": "Semicolon",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_SCLN",
+    "description": "; and :",
+    "doc": "Alias for KC_SEMICOLON",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_QUOTE",
+    "description": "' and \"",
+    "doc": "Quote",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_QUOT",
+    "description": "' and \"",
+    "doc": "Alias for KC_QUOTE",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_GRAVE",
+    "description": "` and ~",
+    "doc": "Grave Accent",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_GRV",
+    "description": "` and ~",
+    "doc": "Alias for KC_GRAVE",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_COMMA",
+    "description": ", and <",
+    "doc": "Comma",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_COMM",
+    "description": ", and <",
+    "doc": "Alias for KC_COMMA",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_DOT",
+    "description": ". and >",
+    "doc": "Dot / Period",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_SLASH",
+    "description": "/ and ?",
+    "doc": "Slash",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_SLSH",
+    "description": "/ and ?",
+    "doc": "Alias for KC_SLASH",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_NONUS_BACKSLASH",
+    "description": "Non-US \\ and |",
+    "doc": "Non-US Backslash",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_NUBS",
+    "description": "Non-US \\ and |",
+    "doc": "Alias for KC_NONUS_BACKSLASH",
+    "category": "punctuation"
+  },
+  {
+    "name": "KC_CAPS_LOCK",
+    "description": "Caps Lock",
+    "doc": "Caps Lock",
+    "category": "locking"
+  },
+  {
+    "name": "KC_CAPS",
+    "description": "Caps Lock",
+    "doc": "Alias for KC_CAPS_LOCK",
+    "category": "locking"
+  },
+  {
+    "name": "KC_SCROLL_LOCK",
+    "description": "Scroll Lock",
+    "doc": "Scroll Lock",
+    "category": "locking"
+  },
+  {
+    "name": "KC_SCRL",
+    "description": "Scroll Lock",
+    "doc": "Alias for KC_SCROLL_LOCK",
+    "category": "locking"
+  },
+  {
+    "name": "KC_NUM_LOCK",
+    "description": "Num Lock",
+    "doc": "Num Lock",
+    "category": "locking"
+  },
+  {
+    "name": "KC_NUM",
+    "description": "Num Lock",
+    "doc": "Alias for KC_NUM_LOCK",
+    "category": "locking"
+  },
+  {
+    "name": "KC_LEFT_CTRL",
+    "description": "Left Control",
+    "doc": "Left Control Modifier",
+    "category": "modifier"
+  },
+  {
+    "name": "KC_LCTL",
+    "description": "Left Control",
+    "doc": "Alias for KC_LEFT_CTRL",
+    "category": "modifier"
+  },
+  {
+    "name": "KC_LEFT_SHIFT",
+    "description": "Left Shift",
+    "doc": "Left Shift Modifier",
+    "category": "modifier"
+  },
+  {
+    "name": "KC_LSFT",
+    "description": "Left Shift",
+    "doc": "Alias for KC_LEFT_SHIFT",
+    "category": "modifier"
+  },
+  {
+    "name": "KC_LEFT_ALT",
+    "description": "Left Alt",
+    "doc": "Left Alt Modifier",
+    "category": "modifier"
+  },
+  {
+    "name": "KC_LALT",
+    "description": "Left Alt",
+    "doc": "Alias for KC_LEFT_ALT",
+    "category": "modifier"
+  },
+  {
+    "name": "KC_LEFT_GUI",
+    "description": "Left GUI",
+    "doc": "Left GUI (Windows/Command) Modifier",
+    "category": "modifier"
+  },
+  {
+    "name": "KC_LGUI",
+    "description": "Left GUI",
+    "doc": "Alias for KC_LEFT_GUI",
+    "category": "modifier"
+  },
+  {
+    "name": "KC_RIGHT_CTRL",
+    "description": "Right Control",
+    "doc": "Right Control Modifier",
+    "category": "modifier"
+  },
+  {
+    "name": "KC_RCTL",
+    "description": "Right Control",
+    "doc": "Alias for KC_RIGHT_CTRL",
+    "category": "modifier"
+  },
+  {
+    "name": "KC_RIGHT_SHIFT",
+    "description": "Right Shift",
+    "doc": "Right Shift Modifier",
+    "category": "modifier"
+  },
+  {
+    "name": "KC_RSFT",
+    "description": "Right Shift",
+    "doc": "Alias for KC_RIGHT_SHIFT",
+    "category": "modifier"
+  },
+  {
+    "name": "KC_RIGHT_ALT",
+    "description": "Right Alt",
+    "doc": "Right Alt Modifier",
+    "category": "modifier"
+  },
+  {
+    "name": "KC_RALT",
+    "description": "Right Alt",
+    "doc": "Alias for KC_RIGHT_ALT",
+    "category": "modifier"
+  },
+  {
+    "name": "KC_RIGHT_GUI",
+    "description": "Right GUI",
+    "doc": "Right GUI Modifier",
+    "category": "modifier"
+  },
+  {
+    "name": "KC_RGUI",
+    "description": "Right GUI",
+    "doc": "Alias for KC_RIGHT_GUI",
+    "category": "modifier"
+  },
+  {
+    "name": "KC_PRINT_SCREEN",
+    "description": "Print Screen",
+    "doc": "Print Screen",
+    "category": "command"
+  },
+  {
+    "name": "KC_PSCR",
+    "description": "Print Screen",
+    "doc": "Alias for KC_PRINT_SCREEN",
+    "category": "command"
+  },
+  {
+    "name": "KC_PAUSE",
+    "description": "Pause",
+    "doc": "Pause Key",
+    "category": "command"
+  },
+  {
+    "name": "KC_PAUS",
+    "description": "Pause",
+    "doc": "Alias for KC_PAUSE",
+    "category": "command"
+  },
+  {
+    "name": "KC_INSERT",
+    "description": "Insert",
+    "doc": "Insert Key",
+    "category": "command"
+  },
+  {
+    "name": "KC_INS",
+    "description": "Insert",
+    "doc": "Alias for KC_INSERT",
+    "category": "command"
+  },
+  {
+    "name": "KC_HOME",
+    "description": "Home",
+    "doc": "Home Key",
+    "category": "command"
+  },
+  {
+    "name": "KC_PAGE_UP",
+    "description": "Page Up",
+    "doc": "Page Up Key",
+    "category": "command"
+  },
+  {
+    "name": "KC_PGUP",
+    "description": "Page Up",
+    "doc": "Alias for KC_PAGE_UP",
+    "category": "command"
+  },
+  {
+    "name": "KC_DELETE",
+    "description": "Delete",
+    "doc": "Forward Delete",
+    "category": "command"
+  },
+  {
+    "name": "KC_DEL",
+    "description": "Delete",
+    "doc": "Alias for KC_DELETE",
+    "category": "command"
+  },
+  {
+    "name": "KC_END",
+    "description": "End",
+    "doc": "End Key",
+    "category": "command"
+  },
+  {
+    "name": "KC_PAGE_DOWN",
+    "description": "Page Down",
+    "doc": "Page Down Key",
+    "category": "command"
+  },
+  {
+    "name": "KC_PGDN",
+    "description": "Page Down",
+    "doc": "Alias for KC_PAGE_DOWN",
+    "category": "command"
+  },
+  {
+    "name": "KC_RIGHT",
+    "description": "Right Arrow",
+    "doc": "Right Arrow",
+    "category": "command"
+  },
+  {
+    "name": "KC_RGHT",
+    "description": "Right Arrow",
+    "doc": "Alias for KC_RIGHT",
+    "category": "command"
+  },
+  {
+    "name": "KC_LEFT",
+    "description": "Left Arrow",
+    "doc": "Left Arrow",
+    "category": "command"
+  },
+  {
+    "name": "KC_DOWN",
+    "description": "Down Arrow",
+    "doc": "Down Arrow",
+    "category": "command"
+  },
+  {
+    "name": "KC_UP",
+    "description": "Up Arrow",
+    "doc": "Up Arrow",
+    "category": "command"
+  },
+  {
+    "name": "KC_APPLICATION",
+    "description": "Application",
+    "doc": "Context Menu Key",
+    "category": "command"
+  },
+  {
+    "name": "KC_APP",
+    "description": "Application",
+    "doc": "Alias for KC_APPLICATION",
+    "category": "command"
+  },
+  {
+    "name": "KC_AUDIO_MUTE",
+    "description": "Mute",
+    "doc": "Audio Mute",
+    "category": "media"
+  },
+  {
+    "name": "KC_MUTE",
+    "description": "Mute",
+    "doc": "Alias for KC_AUDIO_MUTE",
+    "category": "media"
+  },
+  {
+    "name": "KC_AUDIO_VOL_UP",
+    "description": "Volume Up",
+    "doc": "Audio Volume Up",
+    "category": "media"
+  },
+  {
+    "name": "KC_VOLU",
+    "description": "Volume Up",
+    "doc": "Alias for KC_AUDIO_VOL_UP",
+    "category": "media"
+  },
+  {
+    "name": "KC_AUDIO_VOL_DOWN",
+    "description": "Volume Down",
+    "doc": "Audio Volume Down",
+    "category": "media"
+  },
+  {
+    "name": "KC_VOLD",
+    "description": "Volume Down",
+    "doc": "Alias for KC_AUDIO_VOL_DOWN",
+    "category": "media"
+  },
+  {
+    "name": "KC_MEDIA_NEXT_TRACK",
+    "description": "Next Track",
+    "doc": "Next Media",
+    "category": "media"
+  },
+  {
+    "name": "KC_MNXT",
+    "description": "Next Track",
+    "doc": "Alias for KC_MEDIA_NEXT_TRACK",
+    "category": "media"
+  },
+  {
+    "name": "KC_MEDIA_PREV_TRACK",
+    "description": "Prev Track",
+    "doc": "Previous Media",
+    "category": "media"
+  },
+  {
+    "name": "KC_MPRV",
+    "description": "Prev Track",
+    "doc": "Alias for KC_MEDIA_PREV_TRACK",
+    "category": "media"
+  },
+  {
+    "name": "KC_MEDIA_STOP",
+    "description": "Stop",
+    "doc": "Stop Media",
+    "category": "media"
+  },
+  {
+    "name": "KC_MSTP",
+    "description": "Stop",
+    "doc": "Alias for KC_MEDIA_STOP",
+    "category": "media"
+  },
+  {
+    "name": "KC_MEDIA_PLAY_PAUSE",
+    "description": "Play/Pause",
+    "doc": "Play/Pause Media",
+    "category": "media"
+  },
+  {
+    "name": "KC_MPLY",
+    "description": "Play/Pause",
+    "doc": "Alias for KC_MEDIA_PLAY_PAUSE",
+    "category": "media"
+  },
+  {
+    "name": "KC_NO",
+    "description": "NOOP",
+    "doc": "Ignore this key",
+    "category": "special"
+  },
+  {
+    "name": "KC_TRANSPARENT",
+    "description": "Transparent",
+    "doc": "Use next lowest non-transparent key",
+    "category": "special"
+  },
+  {
+    "name": "KC_TRNS",
+    "description": "Transparent",
+    "doc": "Alias for KC_TRANSPARENT",
+    "category": "special"
+  }
+]

@@ -1,0 +1,86 @@
+[
+    {
+        "name": "LCTL_T",
+        "detail": "Mod-Tap: Left Control",
+        "description": "Mod-Tap Key. Holds Left Control when held, sends the keycode when tapped.",
+        "doc": "LCTL_T(kc) - Acts as Left Control when held, and 'kc' when tapped."
+    },
+    {
+        "name": "LSFT_T",
+        "detail": "Mod-Tap: Left Shift",
+        "description": "Mod-Tap Key. Holds Left Shift when held, sends the keycode when tapped.",
+        "doc": "LSFT_T(kc) - Acts as Left Shift when held, and 'kc' when tapped."
+    },
+    {
+        "name": "LALT_T",
+        "detail": "Mod-Tap: Left Alt",
+        "description": "Mod-Tap Key. Holds Left Alt when held, sends the keycode when tapped.",
+        "doc": "LALT_T(kc) - Acts as Left Alt when held, and 'kc' when tapped."
+    },
+    {
+        "name": "LGUI_T",
+        "detail": "Mod-Tap: Left GUI",
+        "description": "Mod-Tap Key. Holds Left GUI when held, sends the keycode when tapped.",
+        "doc": "LGUI_T(kc) - Acts as Left GUI when held, and 'kc' when tapped."
+    },
+    {
+        "name": "RCTL_T",
+        "detail": "Mod-Tap: Right Control",
+        "description": "Mod-Tap Key. Holds Right Control when held, sends the keycode when tapped.",
+        "doc": "RCTL_T(kc) - Acts as Right Control when held, and 'kc' when tapped."
+    },
+    {
+        "name": "RSFT_T",
+        "detail": "Mod-Tap: Right Shift",
+        "description": "Mod-Tap Key. Holds Right Shift when held, sends the keycode when tapped.",
+        "doc": "RSFT_T(kc) - Acts as Right Shift when held, and 'kc' when tapped."
+    },
+    {
+        "name": "RALT_T",
+        "detail": "Mod-Tap: Right Alt",
+        "description": "Mod-Tap Key. Holds Right Alt when held, sends the keycode when tapped.",
+        "doc": "RALT_T(kc) - Acts as Right Alt when held, and 'kc' when tapped."
+    },
+    {
+        "name": "RGUI_T",
+        "detail": "Mod-Tap: Right GUI",
+        "description": "Mod-Tap Key. Holds Right GUI when held, sends the keycode when tapped.",
+        "doc": "RGUI_T(kc) - Acts as Right GUI when held, and 'kc' when tapped."
+    },
+    {
+        "name": "LT",
+        "detail": "Layer-Tap",
+        "description": "Layer-Tap Key. Activates layer when held, sends keycode when tapped.",
+        "doc": "LT(layer, kc) - Activates 'layer' when held, and sends 'kc' when tapped."
+    },
+    {
+        "name": "MO",
+        "detail": "Momentary Layer Switch",
+        "description": "Activates the specified layer while the key is held down.",
+        "doc": "MO(layer) - Turns on 'layer' while the key is held."
+    },
+    {
+        "name": "TG",
+        "detail": "Toggle Layer",
+        "description": "Toggles a layer on or off.",
+        "doc": "TG(layer) - If 'layer' is active, turns it off. If inactive, turns it on."
+    },
+    {
+        "name": "TO",
+        "detail": "Turn On Layer",
+        "description": "Turns on a layer and turns off all other layers (except default).",
+        "doc": "TO(layer) - Activates 'layer' and deactivates all other non-default layers."
+    },
+    {
+        "name": "DF",
+        "detail": "Default Layer",
+        "description": "Sets the default base layer.",
+        "doc": "DF(layer) - Changes the default base layer to 'layer'. This persists until power cycle."
+    },
+    {
+        "name": "TD",
+        "detail": "Tap Dance",
+        "description": "Tap Dance key.",
+        "doc": "TD(index) - Activates a Tap Dance structure defined in 'tap_dance_actions'."
+    }
+]
