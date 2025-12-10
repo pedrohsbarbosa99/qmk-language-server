@@ -38,7 +38,7 @@ impl Backend {
         let layers = &doc_entry.layers;
 
         let mut diagnostics = Vec::new();
-        let re = Regex::new(r"\bKC_[A-Z0-9_]+\b").unwrap();
+        let re = Regex::new(r"\bKC_[a-zA-Z0-9_]+\b").unwrap();
 
         let get_position = |byte_idx: usize| -> Position {
              let mut line = 0;
