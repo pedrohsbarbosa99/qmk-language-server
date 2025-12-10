@@ -34,15 +34,15 @@ jobs:
           node-version: 20
 
       - name: Install deps
-        working-directory: extensions/vscode
+        working-directory: extensions/vscode/client
         run: npm install
 
       - name: Package VSIX
-        working-directory: extensions/vscode
+        working-directory: extensions/vscode/client
         run: npx vsce package
 
       - name: Upload .vsix result
         uses: actions/upload-artifact@v4
         with:
           name: vscode-extension
-          path: extensions/vscode/*.vsix
+          path: extensions/vscode/client/*.vsix
