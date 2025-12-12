@@ -3,7 +3,7 @@
     "displayName": "QMK Language Server Client",
     "description": "Client for QMK Language Server",
     "version": "0.0.1",
-    "publisher": "antigravity",
+    "publisher": "PedroHenriqueBarbosa",
     "engines": {
         "vscode": "^1.75.0"
     },
