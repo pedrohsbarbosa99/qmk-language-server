@@ -2,7 +2,7 @@
     "name": "qmk-lsp-client",
     "displayName": "QMK Language Server Client",
     "description": "Client for QMK Language Server",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "publisher": "PedroHenriqueBarbosa",
     "engines": {
         "vscode": "^1.75.0"
@@ -11,6 +11,22 @@
         "onLanguage:c",
         "onLanguage:cpp"
     ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/pedrohsbarbosa99/qmk-lsp-client"
+    },
+    "bugs": {
+        "url": "https://github.com/pedrohsbarbosa99/qmk-lsp-client/issues"
+    },
+    "homepage": "https://github.com/pedrohsbarbosa99/qmk-lsp-client",
+    "keywords": [
+        "qmk",
+        "lsp",
+        "language server",
+        "keyboard",
+        "firmware"
+    ],
+    "license": "MIT",
     "main": "./out/extension.js",
     "contributes": {
         "configuration": {
